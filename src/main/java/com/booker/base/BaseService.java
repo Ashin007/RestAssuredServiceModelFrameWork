@@ -1,6 +1,8 @@
 package com.booker.base;
 
+import com.booker.filters.LogFilters;
 import com.booker.utils.PropertiesFetcher;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
@@ -30,5 +32,8 @@ public class BaseService {
     }
     public Response deleteRequest(String token,String endPoint){
         return requestSpecification.contentType("application/json").cookie("token",token).log().all().delete(endPoint);
+    }
+    static {
+        RestAssured.filters(new LogFilters());
     }
 }
