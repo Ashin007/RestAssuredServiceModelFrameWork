@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="18" passed="18" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-17T21:43:33 IST" name="API Test" finished-at="2025-07-17T21:43:48 IST" duration-ms="15014">
+    <groups>
+    </groups>
+    <test started-at="2025-07-17T21:43:33 IST" name="Booking API Test" finished-at="2025-07-17T21:43:48 IST" duration-ms="15014">
+      <class name="com.booker.tests.booking.GetBookingById">
+        <test-method signature="getListOfAllBookingId()[pri:1, instance:com.booker.tests.booking.GetBookingById@107ed6fc]" started-at="2025-07-17T21:43:37 IST" name="getListOfAllBookingId" finished-at="2025-07-17T21:43:39 IST" duration-ms="2564" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfAllBookingId -->
+        <test-method signature="getBookingInformationById()[pri:2, instance:com.booker.tests.booking.GetBookingById@107ed6fc]" started-at="2025-07-17T21:43:39 IST" name="getBookingInformationById" finished-at="2025-07-17T21:43:41 IST" depends-on-methods="com.booker.tests.booking.GetBookingById.getListOfAllBookingId" duration-ms="1706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookingInformationById -->
+      </class> <!-- com.booker.tests.booking.GetBookingById -->
+      <class name="com.booker.tests.booking.CreateBooking">
+        <test-method signature="createBookingForUser()[pri:1, instance:com.booker.tests.booking.CreateBooking@34a75079]" started-at="2025-07-17T21:43:33 IST" name="createBookingForUser" finished-at="2025-07-17T21:43:37 IST" duration-ms="3612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createBookingForUser -->
+        <test-method signature="getBookingInformationById()[pri:2, instance:com.booker.tests.booking.CreateBooking@34a75079]" started-at="2025-07-17T21:43:38 IST" name="getBookingInformationById" finished-at="2025-07-17T21:43:41 IST" depends-on-methods="com.booker.tests.booking.CreateBooking.createBookingForUser" duration-ms="2597" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookingInformationById -->
+      </class> <!-- com.booker.tests.booking.CreateBooking -->
+      <class name="com.booker.tests.booking.DeleteBooking">
+        <test-method signature="getTokenForBookingUpdate()[pri:1, instance:com.booker.tests.booking.DeleteBooking@346a361]" started-at="2025-07-17T21:43:37 IST" name="getTokenForBookingUpdate" finished-at="2025-07-17T21:43:38 IST" duration-ms="1889" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTokenForBookingUpdate -->
+        <test-method signature="getListOfAllBookingId()[pri:2, instance:com.booker.tests.booking.DeleteBooking@346a361]" started-at="2025-07-17T21:43:39 IST" name="getListOfAllBookingId" finished-at="2025-07-17T21:43:41 IST" duration-ms="2194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfAllBookingId -->
+        <test-method signature="getBookingBeforeDelete()[pri:3, instance:com.booker.tests.booking.DeleteBooking@346a361]" started-at="2025-07-17T21:43:41 IST" name="getBookingBeforeDelete" finished-at="2025-07-17T21:43:43 IST" depends-on-methods="com.booker.tests.booking.DeleteBooking.getListOfAllBookingId" duration-ms="1714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookingBeforeDelete -->
+        <test-method signature="deleteExistingBooking()[pri:4, instance:com.booker.tests.booking.DeleteBooking@346a361]" started-at="2025-07-17T21:43:43 IST" name="deleteExistingBooking" finished-at="2025-07-17T21:43:45 IST" depends-on-methods="com.booker.tests.booking.DeleteBooking.getBookingBeforeDelete, com.booker.tests.booking.DeleteBooking.getListOfAllBookingId" duration-ms="1688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteExistingBooking -->
+        <test-method signature="getBookingAfterDelete()[pri:5, instance:com.booker.tests.booking.DeleteBooking@346a361]" started-at="2025-07-17T21:43:45 IST" name="getBookingAfterDelete" finished-at="2025-07-17T21:43:48 IST" depends-on-methods="com.booker.tests.booking.DeleteBooking.deleteExistingBooking" duration-ms="2990" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getBookingAfterDelete -->
+      </class> <!-- com.booker.tests.booking.DeleteBooking -->
+      <class name="com.booker.tests.auth.CreateToken">
+        <test-method signature="createTokenFromAuth()[pri:0, instance:com.booker.tests.auth.CreateToken@7c7d3c46]" started-at="2025-07-17T21:43:33 IST" name="createTokenFromAuth" finished-at="2025-07-17T21:43:37 IST" duration-ms="3599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createTokenFromAuth -->
+      </class> <!-- com.booker.tests.auth.CreateToken -->
+      <class name="com.booker.tests.booking.UpdateExistingBooking">
+        <test-method signature="getTokenForBookingUpdate()[pri:1, instance:com.booker.tests.booking.UpdateExistingBooking@2e029d61]" started-at="2025-07-17T21:43:37 IST" name="getTokenForBookingUpdate" finished-at="2025-07-17T21:43:38 IST" duration-ms="1853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTokenForBookingUpdate -->
+        <test-method signature="getListOfAllBookingId()[pri:2, instance:com.booker.tests.booking.UpdateExistingBooking@2e029d61]" started-at="2025-07-17T21:43:38 IST" name="getListOfAllBookingId" finished-at="2025-07-17T21:43:42 IST" duration-ms="3327" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfAllBookingId -->
+        <test-method signature="updateExistingBooking()[pri:2, instance:com.booker.tests.booking.UpdateExistingBooking@2e029d61]" started-at="2025-07-17T21:43:42 IST" name="updateExistingBooking" finished-at="2025-07-17T21:43:44 IST" depends-on-methods="com.booker.tests.booking.UpdateExistingBooking.getListOfAllBookingId, com.booker.tests.booking.UpdateExistingBooking.getTokenForBookingUpdate" duration-ms="1758" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateExistingBooking -->
+      </class> <!-- com.booker.tests.booking.UpdateExistingBooking -->
+      <class name="com.booker.tests.ping.CheckHealth">
+        <test-method signature="checkApiHealth()[pri:0, instance:com.booker.tests.ping.CheckHealth@482d776b]" started-at="2025-07-17T21:43:33 IST" name="checkApiHealth" finished-at="2025-07-17T21:43:37 IST" duration-ms="3558" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkApiHealth -->
+      </class> <!-- com.booker.tests.ping.CheckHealth -->
+      <class name="com.booker.tests.booking.PartiallyUpdateExistingBooking">
+        <test-method signature="getTokenForBookingUpdate()[pri:1, instance:com.booker.tests.booking.PartiallyUpdateExistingBooking@186978a6]" started-at="2025-07-17T21:43:38 IST" name="getTokenForBookingUpdate" finished-at="2025-07-17T21:43:39 IST" duration-ms="1764" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getTokenForBookingUpdate -->
+        <test-method signature="getListOfAllBookingId()[pri:2, instance:com.booker.tests.booking.PartiallyUpdateExistingBooking@186978a6]" started-at="2025-07-17T21:43:41 IST" name="getListOfAllBookingId" finished-at="2025-07-17T21:43:43 IST" duration-ms="2277" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfAllBookingId -->
+        <test-method signature="partiallyUpdateBooking()[pri:3, instance:com.booker.tests.booking.PartiallyUpdateExistingBooking@186978a6]" started-at="2025-07-17T21:43:43 IST" name="partiallyUpdateBooking" finished-at="2025-07-17T21:43:45 IST" depends-on-methods="com.booker.tests.booking.PartiallyUpdateExistingBooking.getListOfAllBookingId, com.booker.tests.booking.PartiallyUpdateExistingBooking.getTokenForBookingUpdate" duration-ms="1766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- partiallyUpdateBooking -->
+      </class> <!-- com.booker.tests.booking.PartiallyUpdateExistingBooking -->
+      <class name="com.booker.tests.booking.GetBookingId">
+        <test-method signature="getListOfAllBookingId()[pri:0, instance:com.booker.tests.booking.GetBookingId@1643d68f]" started-at="2025-07-17T21:43:33 IST" name="getListOfAllBookingId" finished-at="2025-07-17T21:43:38 IST" duration-ms="4569" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getListOfAllBookingId -->
+      </class> <!-- com.booker.tests.booking.GetBookingId -->
+    </test> <!-- Booking API Test -->
+  </suite> <!-- API Test -->
+</testng-results>
