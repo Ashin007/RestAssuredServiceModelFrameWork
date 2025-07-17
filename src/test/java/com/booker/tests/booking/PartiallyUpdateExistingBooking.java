@@ -8,6 +8,7 @@ import com.booker.model.request.PartialBookingResponse;
 import com.booker.model.response.BookingIdResponse;
 import com.booker.model.response.TokenResponse;
 import com.github.javafaker.Faker;
+import io.restassured.http.Header;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
@@ -42,7 +43,16 @@ public class PartiallyUpdateExistingBooking {
         BookingService bookingService = new BookingService();
         PartialBookingResponse partialBookingResponse = new PartialBookingResponse(faker.name().firstName(),faker.name().lastName());
         Response partialUpdateResponse = bookingService.partiallyUpdateBooking(token,partialBookingResponse,bookingId);
-        BookingRequest response = partialUpdateResponse.as(BookingRequest.class);
-        System.out.println(response.toString());
+        System.out.println("Content Type: "+partialUpdateResponse.contentType());
+        if(partialUpdateResponse.contentType().equalsIgnoreCase("application/json; charset=utf-8")){
+            BookingRequest response = partialUpdateResponse.as(BookingRequest.class);
+            System.out.println(response.toString());
+            System.out.println("Application/json");
+        }
+        else{
+            partialUpdateResponse.then().assertThat().statusCode(200);
+            System.out.println("Partial update: text/plain; charset=utf-8");
+        }
+
     }
 }

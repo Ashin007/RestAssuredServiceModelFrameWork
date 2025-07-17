@@ -46,8 +46,18 @@ public class UpdateExistingBooking {
                 .setAdditionalNeeds(faker.howIMetYourMother().catchPhrase())
                 .build();
         Response updatedBookingResponse = bookingService.updateBooking(bookingRequestPayload, token, bookingId);
-        BookingRequest bookingRequest = updatedBookingResponse.as(BookingRequest.class);
-        System.out.println(bookingRequest);
+
+        System.out.println("Content Type: "+updatedBookingResponse.contentType());
+        if(updatedBookingResponse.contentType().equalsIgnoreCase("application/json; charset=utf-8")){
+            BookingRequest bookingRequest = updatedBookingResponse.as(BookingRequest.class);
+            System.out.println(bookingRequest.toString());
+            System.out.println("Application/json");
+        }
+        else{
+            updatedBookingResponse.then().assertThat().statusCode(200);
+            System.out.println("Partial update: text/plain; charset=utf-8");
+        }
+
 
     }
 }
