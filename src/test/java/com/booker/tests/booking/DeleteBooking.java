@@ -14,7 +14,6 @@ public class DeleteBooking {
 
     private String token;
     private String bookingId;
-    List<BookingIdResponse> booking;
     @Test(priority = 1)
     public void getTokenForBookingUpdate() {
         AuthService authService = new AuthService();
@@ -28,10 +27,7 @@ public class DeleteBooking {
     public void getListOfAllBookingId(){
         BookingService bookingService = new BookingService();
         Response bookingIdResponse =  bookingService.getAllBookingId();
-        booking = bookingIdResponse.jsonPath().getList("", BookingIdResponse.class);
-        for(int i=0;i<booking.size();i++){
-            System.out.println(booking.get(i).getBookingid());
-        }
+        List<BookingIdResponse> booking = bookingIdResponse.jsonPath().getList("", BookingIdResponse.class);
         bookingId = String.valueOf(booking.get(booking.size()-1).getBookingid());
         System.out.println(bookingId);
     }
@@ -49,11 +45,6 @@ public class DeleteBooking {
         BookingService bookingService = new BookingService();
         Response response = bookingService.deleteBooking(token,bookingId);
         response.then().assertThat().statusCode(201);
-        for(int i=0;i<booking.size();i++){
-            System.out.println(booking.get(i).getBookingid());
-            bookingService.deleteBooking(null,String.valueOf(booking.get(i).getBookingid()));
-            System.out.println(booking.get(i).getBookingid()+" Deleted");
-        }
 
     }
     @Test(priority = 5,dependsOnMethods = "deleteExistingBooking")
